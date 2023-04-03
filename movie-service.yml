@@ -16,13 +16,15 @@ eureka:
     hostname: localhost
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
    
- mongodb:
-  embedded:
-    version: 4.0.2
-data:
+spring:
   mongodb:
-    database: catalogo
-    port: 27018
+    embedded:
+      version: 4.0.2
+  data:
+    mongodb:
+      database: catalogo
+      port: 27017
+
 
 
 
