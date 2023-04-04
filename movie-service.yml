@@ -17,16 +17,16 @@ eureka:
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 
 datasource:
-  url: jdbc:mysql://localhost:3306/testdb
+  url: jdbc:mysql://localhost:3306/movie-dev
   driverClassName: com.mysql.cj.jdbc.Driver
   username: root
-  password: password
+  password: admin1234
 
 jpa:
   open-in-view: false
   show-sql: true
   hibernate:
-    ddl-auto: update
+    ddl-auto: create,update
   properties:
     hibernate:
       dialect: org.hibernate.dialect.MySQL5Dialect
