@@ -17,7 +17,7 @@ eureka:
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 
 datasource:
-  url: jdbc:mysql://localhost:3306/movie_dev
+  url: jdbc:mysql://localhost:3306/movies
   driverClassName: com.mysql.cj.jdbc.Driver
   username: root
   password: admin1234
@@ -27,10 +27,7 @@ jpa:
   show-sql: true
   hibernate:
     ddl-auto: create,update
-  properties:
-    hibernate:
-      dialect: org.hibernate.dialect.MySQL5Dialect
-      format_sql: true
+ 
 
 message: hello from movie-service
 
