@@ -18,10 +18,10 @@ spring:
           uri: lb://catalog-service #URL donde se hará el redirect segun el predicado definido
           predicates: #Reglas de analisis de request
             - Path=/catalog/** #path de url de request a considerar
-       - id: msmovieService #identificador de la ruta
-        uri: lb://movie-service #URL donde se hará el redirect segun el predicado definido
-        predicates: #Reglas de analisis de request
-          - Path=/movies/** #path de url de request a considerar
+        - id: msmovieService #identificador de la ruta
+         uri: lb://movie-service #URL donde se hará el redirect segun el predicado definido
+         predicates: #Reglas de analisis de request
+           - Path=/movies/** #path de url de request a considerar
 
 
 
