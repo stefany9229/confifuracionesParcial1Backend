@@ -5,6 +5,9 @@ server:
 spring:
   application:
     name: movie-service
+  zipkin:
+    base-url: http://localhost:9411/
+    enabled: true
 
 eureka:
   client:
@@ -15,8 +18,8 @@ eureka:
   instance:
     hostname: localhost
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
-   
-      
+
+
 
 
   datasource:
@@ -24,21 +27,26 @@ eureka:
     driverClassName: org.h2.Driver
     username: sa
     password: sa
-  jpa:
-    open-in-view: false
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-    properties:
+    jpa:
+      open-in-view: false
+      show-sql: true
       hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
-        format_sql: true
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+        ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.H2Dialect
+          format_sql: true
+    h2:
+      console:
+        enabled: true
+        path: /h2-console
+
 
 message: hello from movie-service
+
+queue:
+  movie:
+    name: MovieQueue
 
 management:
   endpoints:
