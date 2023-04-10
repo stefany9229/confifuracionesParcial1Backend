@@ -3,8 +3,7 @@ server:
   idRandom: ${random.value}
 
 spring:
-  application:
-    name: movie-service
+  
   zipkin:
     base-url: http://localhost:9411/
     enabled: true
