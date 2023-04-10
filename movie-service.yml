@@ -3,7 +3,6 @@ server:
   idRandom: ${random.value}
 
 spring:
-  
   zipkin:
     base-url: http://localhost:9411/
     enabled: true
@@ -17,8 +16,6 @@ eureka:
   instance:
     hostname: localhost
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
-
-
 
 
   datasource:
